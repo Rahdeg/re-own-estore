@@ -30,7 +30,7 @@ const MobileSidebar = () => {
       <SheetContent side='left' className="p-0 bg-secondary pt-12  w-36">
         <div className=" flex flex-col items-start px-2 mt-3 gap-2 ">
           <Link href="/">
-            <h1 className="hidden md:block text-xl md:text-3xl font-bold text-primary">
+            <h1 className=" text-xl md:text-3xl font-bold text-primary">
               E-STORE
             </h1>
           </Link>
