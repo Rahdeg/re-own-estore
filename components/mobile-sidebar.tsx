@@ -15,17 +15,13 @@ import Link from "next/link";
 
 
 
-interface MobileSidebarProps {
-
-}
-
 const MobileSidebar = () => {
 
 
   return (
     <Sheet>
       <SheetTrigger className='md:hidden pr-4'>
-        <Menu />
+        <Menu className=" w-7 h-7 text-purple-800" />
       </SheetTrigger>
       <SheetContent side='left' className="p-0 bg-secondary pt-12  w-36">
         <div className=" flex flex-col items-start px-2 mt-3 gap-2 ">
@@ -36,11 +32,15 @@ const MobileSidebar = () => {
           </Link>
           <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
             <Package2 className="w-4 h-4 mr-2" />
-            Product
+            Items
           </Link>
           <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
             <Package2 className="w-4 h-4 mr-2" />
             Categories
+          </Link>
+          <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
+            <Package2 className="w-4 h-4 mr-2" />
+            Orders
           </Link>
         </div>
       </SheetContent>

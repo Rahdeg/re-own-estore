@@ -39,13 +39,12 @@ const SearchInput = () => {
   return (
 
     <div className=' flex items-center justify-center gap-x-2 '>
-      {/* <Search className='absolute h-4 w-4 top-3 left-4 text-muted-foreground' /> */}
       <Input
         onChange={onChange}
         value={value}
-        placeholder='Search...' className='pl-3 bg-primary/10' />
-      <Button variant='default' size='sm'>
-        <Search className=' h-4 w-4  text-muted-foreground' />
+        placeholder='Search...' className='pl-3 bg-purple-200 text-black ' />
+      <Button className=' bg-purple-200' size='sm'>
+        <Search className=' h-4 w-4  text-black' />
       </Button>
     </div>
 

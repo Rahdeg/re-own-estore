@@ -8,6 +8,15 @@ import { UserButton } from "@clerk/nextjs";
 import { Package2 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import MobileSidebar from "./mobile-sidebar";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
+
 
 const font = Poppins({
     weight: "600",
@@ -16,19 +25,31 @@ const font = Poppins({
 
 const Navbar = () => {
     return (
-        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
+        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-white  h-16 bg-[#111827]">
             <div className='flex items-center'>
                 <MobileSidebar />
                 <Link href="/">
-                    <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary", font.className)}>
+                    <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-white", font.className)}>
                         E-STORE
                     </h1>
                 </Link>
             </div>
-            <div className=" w-1/3">
+            <div className=" w-1/2 md:w-1/3">
                 <SearchInput />
             </div>
-            <div className=" hidden md:flex   items-center space-x-1 ">
+            <Select >
+                <SelectTrigger className="w-[180px] hidden md:flex bg-purple-200">
+                    <SelectValue placeholder="products" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="items">Items</SelectItem>
+                    <SelectItem value="categories">Categories</SelectItem>
+                    <SelectItem value="orders">Orders</SelectItem>
+                </SelectContent>
+            </Select>
+
+
+            {/* <div className=" hidden md:flex   items-center space-x-1 ">
                 <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
                     <Package2 className="w-4 h-4 mr-2" />
                     Product
@@ -37,7 +58,7 @@ const Navbar = () => {
                     <Package2 className="w-4 h-4 mr-2" />
                     Categories
                 </Link>
-            </div>
+            </div> */}
 
             <div className='flex items-center gap-x-2'>
                 <NavbarActions />

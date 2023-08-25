@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs';
+import { cn } from '@/lib/utils';
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -20,7 +21,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={font.className}>
-          <Navbar />
           {children}
         </body>
       </html>
