@@ -25,7 +25,7 @@ const font = Poppins({
 
 const Navbar = () => {
     return (
-        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-white  h-16 bg-[#111827]">
+        <div className=" fixed w-full z-50 flex justify-between  items-center py-2 px-4 border-b border-white  h-16 bg-[#111827]">
             <div className='flex items-center'>
                 <MobileSidebar />
                 <Link href="/">

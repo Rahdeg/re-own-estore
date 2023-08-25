@@ -15,7 +15,7 @@ const DashboardLayout = async ({
 
 
     return (
-        <div className=" h-full bg-[#111827]">
+        <div className=" h-full bg-[#111827] relative ">
             <Navbar />
             {children}
         </div>
