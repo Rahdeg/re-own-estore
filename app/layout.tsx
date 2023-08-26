@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
+import ToastProvider from '@/provider/toast-provider';
+import ModalProvider from '@/provider/modal-provider';
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -21,6 +23,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={font.className}>
+          <ToastProvider />
+          <ModalProvider />
           {children}
         </body>
       </html>

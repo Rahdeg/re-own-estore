@@ -14,17 +14,11 @@ const ProductList: React.FC<ProductListProps> = ({ title, data }) => {
 
     const addItems = useCart((state) => state.addItem);
 
-
     useEffect(() => {
         addItems(data)
     }, [addItems, data]);
 
-
     const products = useCart((state) => state.items);
-
-
-
-
 
     return (
         <div className=" space-y-4">

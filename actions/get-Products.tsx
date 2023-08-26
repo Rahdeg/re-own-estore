@@ -1,4 +1,4 @@
-const url = 'https://dummyjson.com/products?limit=16&skip=10'
+const url = 'https://dummyjson.com/products'
 
 
 const getProducts = async (): Promise<any[]> => {

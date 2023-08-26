@@ -1,11 +1,10 @@
+"use client"
 import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import React from "react";
 import SearchInput from "./search-input";
 import NavbarActions from "./navbar-actions";
-import { UserButton } from "@clerk/nextjs";
-import { Package2 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import MobileSidebar from "./mobile-sidebar";
 import {
@@ -15,6 +14,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import { useRouter } from "next/navigation";
 
 
 
@@ -24,6 +24,7 @@ const font = Poppins({
 });
 
 const Navbar = () => {
+    const router = useRouter()
     return (
         <div className=" fixed w-full z-50 flex justify-between  items-center py-2 px-4 border-b border-white  h-16 bg-[#111827]">
             <div className='flex items-center'>
@@ -37,12 +38,12 @@ const Navbar = () => {
             <div className=" w-1/2 md:w-1/3">
                 <SearchInput />
             </div>
-            <Select >
-                <SelectTrigger className="w-[180px] hidden md:flex bg-purple-200">
-                    <SelectValue placeholder="products" />
+            <Select onValueChange={(value) => router.push(`/${value}`)}>
+                <SelectTrigger className="w-[180px] hidden md:flex bg-white">
+                    <SelectValue placeholder="Explore" />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="items">Items</SelectItem>
+                    <SelectItem value="products">Products</SelectItem>
                     <SelectItem value="categories">Categories</SelectItem>
                     <SelectItem value="orders">Orders</SelectItem>
                 </SelectContent>

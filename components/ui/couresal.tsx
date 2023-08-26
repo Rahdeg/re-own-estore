@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import Image from 'next/image';
 
 const contentStyle: React.CSSProperties = {
     height: '300px',
@@ -12,16 +13,32 @@ const contentStyle: React.CSSProperties = {
 const App: React.FC = () => (
     <Carousel autoplay className=' flex items-center justify-center rounded-md'>
         <div>
-            <h3 style={contentStyle}>1</h3>
+            <h3 style={contentStyle}>
+                <div className=' w-auto h-80 relative'>
+                    <Image src="/3866987.jpg" alt='img' className=' object-cover rounded-md' fill />
+                </div>
+            </h3>
         </div>
         <div>
-            <h3 style={contentStyle}>2</h3>
+            <h3 style={contentStyle}>
+                <div className=' w-auto h-80 relative'>
+                    <Image src="/3980811.jpg" alt='img' className=' object-cover rounded-md' fill />
+                </div>
+            </h3>
         </div>
         <div>
-            <h3 style={contentStyle}>3</h3>
+            <h3 style={contentStyle}>
+                <div className=' w-auto h-80 relative'>
+                    <Image src="/6101683.jpg" alt='img' className=' object-cover rounded-md' fill />
+                </div>
+            </h3>
         </div>
         <div>
-            <h3 style={contentStyle}>4</h3>
+            <h3 style={contentStyle}>
+                <div className=' w-auto h-80 relative'>
+                    <Image src="/6444674.jpg" alt='img' className=' object-cover rounded-md' fill />
+                </div>
+            </h3>
         </div>
     </Carousel>
 );
