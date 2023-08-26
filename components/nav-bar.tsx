@@ -15,6 +15,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { useRouter } from "next/navigation";
+import { UserButton, auth } from "@clerk/nextjs";
 
 
 
@@ -23,8 +24,14 @@ const font = Poppins({
     subsets: ["latin"]
 });
 
-const Navbar = () => {
+interface NavbarProps {
+    userId?: string | null
+}
+
+const Navbar = ({ userId }: NavbarProps) => {
     const router = useRouter()
+
+
     return (
         <div className=" fixed w-full z-50 flex justify-between  items-center py-2 px-4 border-b border-white  h-16 bg-[#111827]">
             <div className='flex items-center'>
@@ -50,25 +57,19 @@ const Navbar = () => {
             </Select>
 
 
-            {/* <div className=" hidden md:flex   items-center space-x-1 ">
-                <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
-                    <Package2 className="w-4 h-4 mr-2" />
-                    Product
-                </Link>
-                <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
-                    <Package2 className="w-4 h-4 mr-2" />
-                    Categories
-                </Link>
-            </div> */}
-
-            <div className='flex items-center gap-x-2'>
+            <div className='flex items-center gap-x-3'>
                 <NavbarActions />
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                {
+                    userId ? (<UserButton afterSignOutUrl='/' />) : (
+                        <Avatar>
+                            <AvatarImage src="https://github.com/shadcn.png" />
+                            <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                    )
+                }
 
-                {/* <UserButton afterSignOutUrl='/' /> */}
+
+
             </div>
         </div>
     );

@@ -4,7 +4,8 @@ import { ShoppingBag } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "./ui/button"
-// import { ModeToggle } from "./theme-toggle"
+import useCart from "@/hooks/use-cart"
+
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -13,7 +14,7 @@ const NavbarActions = () => {
     setIsMounted(true);
   }, [])
 
-  // const cart = useCart();
+  const cart = useCart();
   const router = useRouter();
 
 
@@ -25,10 +26,10 @@ const NavbarActions = () => {
 
     <div className="ml-auto flex items-center gap-x-4">
       {/* <ModeToggle/> */}
-      <Button className=" flex items-center  rounded-lg px-4 py-2" variant='default' onClick={() => router.push("/cart")}>
+      <Button className="relative flex items-center rounded-full px-3 py-2" variant='default' onClick={() => router.push("/cart")}>
         <ShoppingBag size={20} color="white" />
-        <span className="ml-2 text-sm font-medium text-white">
-          0
+        <span className="absolute -top-1 -right-1 text-xs font-medium bg-purple-900 text-white rounded-full w-5 h-5 flex items-center justify-center">
+          {cart.items.length}
         </span>
       </Button>
     </div>

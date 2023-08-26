@@ -1,5 +1,6 @@
 
 import Navbar from '@/components/nav-bar'
+import { auth } from '@clerk/nextjs'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -13,10 +14,11 @@ const DashboardLayout = async ({
     children: React.ReactNode
 }) => {
 
+    const { userId } = auth();
 
     return (
         <div className=" h-full bg-[#111827] relative ">
-            <Navbar />
+            <Navbar userId={userId} />
             {children}
         </div>
     )
