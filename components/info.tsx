@@ -18,7 +18,7 @@ const Info: React.FC<infoProps> = ({ data }) => {
     }
     return (
         <div>
-            <h1 className=" text-3xl font-bold text-gray-900">
+            <h1 className=" text-3xl font-bold text-gray-900 mt-10">
                 {data.title}
             </h1>
             <div className="mt-3 flex items-end justify-between">
@@ -48,7 +48,7 @@ const Info: React.FC<infoProps> = ({ data }) => {
                 </div>
             </div>
             <div className=" mt-10 flex items-center gap-x-3">
-                <Button className=" flex items-center gap-x-2" onClick={addToCart}>
+                <Button className=" flex items-center gap-x-2 mb-5" onClick={addToCart}>
                     Add to Cart
                     <ShoppingCart />
                 </Button>
