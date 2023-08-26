@@ -1,13 +1,10 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 
-import { Menu, Package2 } from "lucide-react"
+import { LayoutDashboard, ListOrdered, LucideBoomBox, Menu } from "lucide-react"
 import Link from "next/link";
 
 
@@ -26,20 +23,20 @@ const MobileSidebar = () => {
       <SheetContent side='left' className="p-0 bg-secondary pt-12  w-36">
         <div className=" flex flex-col items-start px-2 mt-3 gap-2 ">
           <Link href="/">
-            <h1 className=" text-xl md:text-3xl font-bold text-primary">
+            <h1 className=" text-2xl  font-bold text-primary text-purple-900">
               E-STORE
             </h1>
           </Link>
-          <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
-            <Package2 className="w-4 h-4 mr-2" />
-            Items
+          <Link href="/products" className=' font-bold flex items-center justify-center text-lg  text-purple-900'>
+            <LucideBoomBox className="w-6 h-6 mr-2 text-purple-900" />
+            Products
           </Link>
-          <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
-            <Package2 className="w-4 h-4 mr-2" />
-            Categories
+          <Link href="/dashboard" className='flex items-center justify-center text-lg font-bold text-purple-900'>
+            <LayoutDashboard className="w-6 h-6 mr-2 text-purple-900" />
+            Dashboard
           </Link>
-          <Link href="/product" className='flex items-center justify-center text-lg font-medium transition-colors hover:text-black'>
-            <Package2 className="w-4 h-4 mr-2" />
+          <Link href="/" className='flex items-center justify-center text-lg font-bold text-purple-900'>
+            <ListOrdered className="w-6 h-6 mr-2 text-purple-900" />
             Orders
           </Link>
         </div>

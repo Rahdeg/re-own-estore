@@ -50,6 +50,7 @@ const Navbar = ({ userId }: NavbarProps) => {
                     <SelectValue placeholder="Explore" />
                 </SelectTrigger>
                 <SelectContent>
+                    <SelectItem value="dashboard">Dashboard</SelectItem>
                     <SelectItem value="products">Products</SelectItem>
                     <SelectItem value="categories">Categories</SelectItem>
                     <SelectItem value="orders">Orders</SelectItem>
