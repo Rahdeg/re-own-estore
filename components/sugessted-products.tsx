@@ -3,11 +3,12 @@ import { useEffect, useState } from "react"
 import NoResults from "./no-result"
 import ProductCard from "./product-card"
 import useCart from "@/hooks/use-products"
+import { Product } from "@/types/product"
 
 
 interface SuggestListProps {
     title: string
-    data: any[]
+    data: Product[]
 }
 
 const SuggestList: React.FC<SuggestListProps> = ({ title, data }) => {

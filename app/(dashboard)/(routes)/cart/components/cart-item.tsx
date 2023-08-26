@@ -1,15 +1,14 @@
 "use client"
 import { X } from "lucide-react"
 import Image from "next/image"
-import { toast } from "react-hot-toast"
-
 import IconButton from "@/components/ui/icon-button"
 import useCart from "@/hooks/use-cart"
 import { useEffect, useState } from "react"
 import Currency from "@/components/currency"
+import { Product } from "@/types/product"
 
 interface CartItemProps {
-    data: any
+    data: Product
 }
 
 const CartItem: React.FC<CartItemProps> = ({ data }) => {
@@ -43,7 +42,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
                 <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                     <div className=" flex justify-between">
                         <p className=" text-lg font-semibold text-white">
-                            {data.name}
+                            {data.title}
                         </p>
                     </div>
                     <div className="mt-1 flex text-sm">

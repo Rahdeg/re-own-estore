@@ -19,10 +19,6 @@ const CartPage = () => {
         return null;
     }
 
-
-
-
-
     return (
         <div className=" flex flex-col  bg-[#111827] space-y-4 px-2">
 

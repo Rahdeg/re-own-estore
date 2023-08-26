@@ -7,6 +7,7 @@ const DashboardPage = async () => {
 
 
     const products = await getProducts();
+    const allProducts = products.products;
 
 
 
@@ -16,7 +17,7 @@ const DashboardPage = async () => {
                 <Billboard />
             </div>
             <div className=" flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-                <ProductList title="Featured Products" data={products.products} />
+                <ProductList title="Featured Products" data={allProducts} />
             </div>
         </div>
 

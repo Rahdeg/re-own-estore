@@ -2,9 +2,10 @@
 import { Tab } from "@headlessui/react"
 import GalleryTab from "./gallery-tab"
 import Image from "next/image"
+import { Product } from "@/types/product"
 
 interface GalleyProps {
-    images: any[]
+    images: string[]
 }
 
 const Gallery: React.FC<GalleyProps> = ({ images }) => {

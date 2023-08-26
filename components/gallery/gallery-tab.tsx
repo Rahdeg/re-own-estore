@@ -3,7 +3,7 @@ import { Tab } from "@headlessui/react"
 import Image from "next/image";
 
 interface GalleryTabProps {
-  image: any
+  image: string
 }
 
 const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {

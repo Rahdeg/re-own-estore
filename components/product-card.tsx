@@ -9,11 +9,12 @@ import IconButton from "./icon-button"
 import Currency from "./currency"
 import usePreviewModal from "@/hooks/use-preview-modal"
 import useCart from "@/hooks/use-cart"
+import { Product } from "@/types/product"
 
 // import useCart from "@/hooks/use-cart"
 
 interface ProductCardProps {
-    data: any
+    data: Product
 }
 
 
