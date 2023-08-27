@@ -2,7 +2,6 @@
 import { Tab } from "@headlessui/react"
 import GalleryTab from "./gallery-tab"
 import Image from "next/image"
-import { Product } from "@/types/product"
 
 interface GalleyProps {
     images: string[]

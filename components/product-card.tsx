@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { Expand, ShoppingCart } from "lucide-react"
-// import Currency from "./currency"
 import { useRouter } from "next/navigation"
 import { MouseEventHandler, useEffect, useState } from "react"
 import IconButton from "./icon-button"
@@ -11,7 +10,6 @@ import usePreviewModal from "@/hooks/use-preview-modal"
 import useCart from "@/hooks/use-cart"
 import { Product } from "@/types/product"
 
-// import useCart from "@/hooks/use-cart"
 
 interface ProductCardProps {
     data: Product
@@ -54,7 +52,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
     return (
         <div className=" bg-#bfbfbf group cursor-pointer rounded-xl border p-3 space-y-4" onClick={handleClick}>
-            {/* Images and Actions */}
             <div className=" aspect-square rounded-xl bg-gray-100 relative">
                 <Image
                     alt="image"
@@ -69,13 +66,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     </div>
                 </div>
             </div>
-            {/* Description */}
             <div>
                 <p className=" font-semibold text-lg text-white">
                     {data.title}
                 </p>
                 <p className=" text-sm text-gray-500 ">
-                    {/* {data.description} */}
                 </p>
             </div>
             {/* Price */}

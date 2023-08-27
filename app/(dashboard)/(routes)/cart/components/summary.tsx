@@ -1,6 +1,4 @@
 "use client"
-import axios from "axios";
-import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useCart from "@/hooks/use-cart";
 import { toast } from "react-hot-toast";

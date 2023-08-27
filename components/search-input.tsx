@@ -1,24 +1,15 @@
 "use client"
 import { Search } from 'lucide-react'
-import qs from 'query-string'
 import React, { ChangeEventHandler, useCallback, useEffect, useState } from 'react'
 import { Input } from './ui/input'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { Button } from './ui/button'
 import { useDebounce } from '@/hooks/use-debounce'
 import axios from "axios"
 import useStoreProducts from '@/hooks/use-products'
 
 
 const SearchInput = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const categoryId = searchParams.get("categoryId");
-  const name = searchParams.get("name");
-  const [value, setValue] = useState(name || "");
+  const [value, setValue] = useState("");
   const debounceValue = useDebounce<string>(value, 500)
-
   const addProduct = useStoreProducts();
 
 
@@ -31,6 +22,7 @@ const SearchInput = () => {
     const response = await axios.get(`https://dummyjson.com/products/search?q=${debounceValue}`);
     addProduct.addItem(response.data["products"]);
     return;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debounceValue])
 
 

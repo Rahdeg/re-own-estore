@@ -7,11 +7,6 @@ import {
 import { LayoutDashboard, ListOrdered, LucideBoomBox, Menu } from "lucide-react"
 import Link from "next/link";
 
-
-
-
-
-
 const MobileSidebar = () => {
 
 

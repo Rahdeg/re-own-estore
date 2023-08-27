@@ -1,6 +1,4 @@
 "use client"
-import { Carousel } from "@material-tailwind/react";
-import Image from "next/image";
 import ImageCarousel from "./ui/couresal";
 
 
